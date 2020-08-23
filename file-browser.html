@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Browser</title>
+    <link rel="stylesheet" type="text/css" href="css/photon.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app" class="window">
+        
+        <div class="window-content">
+            <div class="pane-group">
+                <div class="pane-sm sidebar">
+					<div style="display: flex;">
+						<h4 style="margin-left: 20px;"> Local </h4>
+	                    <button class="btn btn-large btn-primary center custom-button" style="width: 100px;" @click="UploadFile"><i class="fa fa-upload"></i>&nbsp;Upload</button>
+					</div>
+                    <ul class="list-group-control">
+                        <li class="list-group-header">
+                            <!-- <i  class="fa fa-arrow-left"></i> -->
+                            <i  class="fa fa-arrow-up custom-button" @click="up"></i>
+                            <i  class="fa fa-home custom-button" @click="goHome"></i>
+                            <i  class="fa fa-refresh custom-button" @click="refresh"></i>&nbsp;
+                            <input class="form-control" type="text" v-model="location" disabled>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <div class="listing-item" @dblclick="up">&nbsp;<i class="fa fa-folder-open-o"></i>&nbsp..</div>
+                        <li class="list-group-item" v-for="file in files" @click="selected(file.name, file.id, file.isFolder)" :id="'file-' + file.id">
+                            <listing v-bind:key="file.id" v-bind:item="file" class="media-body">
+                            </listing>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pane-sm sidebar">
+					<div style="display: flex;">
+		                <button class="btn btn-large btn-primary center custom-button" style="width: 100px;" @click="DownloadFile"><i class="fa fa-download"></i>&nbsp;Download</button>
+						<h4 style="margin-right: 20px;"> Remote </h4>
+					</div>
+                    <ul class="list-group-control">
+                        <li class="list-group-header">
+                            <!-- <i  class="fa fa-arrow-left"></i> -->
+                            <i  class="fa fa-arrow-up custom-button" @click="upRemote"></i>
+                            <i  class="fa fa-home custom-button" @click="goHomeRemote"></i>
+                            <i  class="fa fa-refresh custom-button" @click="refreshRemote"></i>&nbsp;
+                            <input class="form-control" type="text" v-model="locationRemote" disabled>
+                        </li>
+                    </ul>
+                    <ul class="list-group">
+                        <div class="listing-item" @dblclick="upRemote">&nbsp;<i class="fa fa-folder-open-o"></i>&nbsp..</div>
+                        <li class="list-group-item" v-for="fileRemote in filesRemote" @click="selectedRemote(fileRemote.name, fileRemote.id, fileRemote.isFolder)" :id="'file-remote-' + fileRemote.id">
+                            <listingremote v-bind:key="fileRemote.id" v-bind:item="fileRemote" class="media-body">
+                            </listingremote>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        require('./renderer.js')
+    </script>
+</body>
+</html>

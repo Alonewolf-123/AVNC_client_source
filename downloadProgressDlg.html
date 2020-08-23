@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>File Downloading</title>
+        <link rel="stylesheet" href="stylesheets/css/tachyons.css" />
+        <link rel="stylesheet" href="stylesheets/css/avnc.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <script src="downloadProgressDlg.js"></script>
+    </head>
+<body style="height: auto;">
+    <div class="progress_body">
+        <h2 id="progressbar_caption" class="progress_bottom">Downloading...</h2>
+        <div class="progress_bottom" id="myProgress">
+            <div id="myBar">0%</div>
+        </div>
+        <div class="progress_bottom">
+            <label id="sendsize">0/0 bytes sent</label>
+        </div>
+        <div>
+            <button id="cancel_button" class="custom-button" onclick="cancel_download()">Cancel</button>
+        </div>
+    </div>
+      <br>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>AVNC Client v1.0.1.4</title>
+  <meta name="author" content="alonewolf">
+  <meta name="description" content="cool appz">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/css/tachyons.css" />
+  <link rel="stylesheet" href="stylesheets/css/avnc.css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+
+<body class="wi-100">
+  <div class="button-container">
+    <div class="navbar">
+      <div class="subnav tooltip">
+        <button id="connect_button" onclick="Connect_Server()" class="subnavbtn"><img class="control-icon" src="./img/connect.png"></button>
+        <span id="connect_button_tooltip" class="tooltiptext">Connect to the AVNC Server!</span>
+      </div>
+      
+      <div class="subnav tooltip">
+        <button class="subnavbtn" onclick="ShowScreens()"><img class="control-icon" src="./img/screen_select.png"></button>
+        <span id="all_screens_tooltip" class="tooltiptext">Select a screen of the Server!</span>        
+        <div id="all_screens" class="subnav-content screen_buttons-container dn" style="margin-top: -1px;">
+          <!-- <a id='screen_1' class='screen_number-button'>Screen 1</a>
+          <a id='screen_2' class='screen_number-button'>Screen 2</a> -->
+        </div>
+      </div>
+      <div class="subnav tooltip">
+        <button id="ctrlaltdel-button" onclick="Send_CtrlAltDel()" class="subnavbtn"><img class="control-icon"
+            src="./img/control_alt_del.png"></button>
+        <span class="tooltiptext">Send Ctrl+Alt+Del to the AVNC Server!</span>
+      </div>
+      <div class="subnav tooltip">
+        <button id="enable_control-button" class="subnavbtn" onclick="Enable_Control()"><img class="control-icon"
+            src="./img/stop_control.png"></button>
+        <span id="enable_control-button_tooltip" class="tooltiptext">Stop the mouse&keyboard control of the AVNC Server!</span>
+      </div>
+      <div class="subnav tooltip">
+        <button id="file_transfer-button" onclick="OpenFileTransfer()" class="subnavbtn"><img class="control-icon"
+            src="./img/file_transfer.png"></button>
+        <span class="tooltiptext">Send/receive a file to/from the AVNC Server!</span>
+      </div>
+    </div>
+  </div>
+  <div class="content-container">
+    <!-- <input class="code-paste-input pam brs ba b--light-gray w-100 mw-fill" value="Loading..."></input> -->
+  </div>
+  <div id="remote_screens" class="multimedia-container"></div>
+  <script src="screen.js"></script>
+</body>
+
+</html>

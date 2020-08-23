@@ -1,0 +1,61 @@
+.action-container {
+    width: 100%;
+}
+.center {
+    display: table;
+    margin: 20px auto;
+}
+
+.sidebar {
+    /* overflow: auto; */
+}
+
+img {
+    width: 100%;
+}
+
+.listing-item {
+    cursor: pointer;
+}
+
+.listing-item:hover {
+    opacity: .6;
+}
+
+i {
+    font-size: 16px !important;
+    position: relative;
+    top: 3px;
+}
+
+.custom-button {
+	cursor: pointer;
+}
+
+.custom-button:hover {
+	opacity: .8;
+}
+
+.progress_bottom {
+    margin: 15px;
+}
+
+.progress_body {
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    margin: auto;
+}
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+  }
+  
+  #myBar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white;
+  }
