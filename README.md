@@ -1,1 +1,1 @@
-## Source code for ANVC Client
+## Source code for AVNC Client
